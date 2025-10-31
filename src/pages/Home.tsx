@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import meImage from "../assets/image-me-1.png";
 
 const Home: React.FC = () => {
   return (
     <section>
-      <h1>Welcome to My App 🚀</h1>
+      <section className="profile-hero">
+        <figure>
+          <img
+            className="profile-hero__image"
+            src={meImage}
+            alt="Portrait of me"
+          />
+          <figcaption>Me.</figcaption>
+        </figure>
+      </section>
+      <h1>Me.</h1>
       <p>
         This is your starting point. Feel free to explore, add components, and
         customize the layout as you build out your project.

@@ -55,6 +55,32 @@ main {
   margin: 0 auto;
 }
 
+.profile-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile-hero figure {
+  margin: 0;
+  text-align: center;
+}
+
+.profile-hero__image {
+  width: 200px;
+  height: min-content;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-hero figcaption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: inherit;
+}
+
 footer {
   padding: 1rem 2rem;
   background: rgba(0, 0, 0, 0.08);
