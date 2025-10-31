@@ -7,7 +7,7 @@ function Layout({ children }: { children: ReactNode }) {
     <div className="app-shell">
       <header>
         <nav>
-          <Link to="/">My App</Link>
+          <Link to="/">Daniel Virtanen</Link>
         </nav>
       </header>
       <main>{children}</main>
