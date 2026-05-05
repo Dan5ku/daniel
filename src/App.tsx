@@ -1,31 +1,21 @@
-import type { ReactNode } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
-
-function Layout({ children }: { children: ReactNode }) {
-  return (
-    <div className="app-shell">
-      <header>
-        <nav>
-          <Link to="/">Daniel Virtanen</Link>
-        </nav>
-      </header>
-      <main>{children}</main>
-      <footer>
-        &copy; {new Date().getFullYear()} [Name]. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+import Work from "./pages/Work";
+import About from "./pages/About";
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Layout>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

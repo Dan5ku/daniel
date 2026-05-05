@@ -1,0 +1,80 @@
+.work-card {
+  border-radius: 16px;
+  border: 1px solid var(--border-card);
+  background: rgba(102, 200, 227, 0.10);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  transition: all 0.22s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.work-card:hover {
+  background: rgba(102, 200, 227, 0.16);
+  border-color: var(--border-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -20px rgba(24, 76, 83, 0.7);
+}
+
+.work-card__thumb {
+  height: 160px;
+  background: rgba(46, 156, 163, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-card);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  transition: background 0.22s ease;
+}
+
+.work-card:hover .work-card__thumb {
+  background: rgba(46, 156, 163, 0.28);
+}
+
+.work-card__thumb.soon {
+  border-style: dashed;
+  border-color: rgba(185, 234, 247, 0.22);
+  background: rgba(46, 156, 163, 0.08);
+}
+
+.work-card__body {
+  padding: 1.25rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.work-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-highlight);
+}
+
+.work-card__desc {
+  font-size: 0.82rem;
+  color: var(--fg2);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.work-card__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  border: 1px solid rgba(185, 234, 247, 0.14);
+  border-radius: 4px;
+  padding: 2px 7px;
+  align-self: flex-start;
+}
