@@ -1,0 +1,36 @@
+.photo-wrap {
+  position: relative;
+}
+
+.photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 10%;
+  right: 10%;
+  height: 24px;
+  background: rgba(18, 58, 64, 0.7);
+  filter: blur(14px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.photo-outer {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.photo-outer.hero-frame {
+  max-width: 380px;
+}
+
+.photo-outer.about-frame {
+  border-radius: var(--radius-md);
+}
+
+.photo-img {
+  width: 100%;
+  display: block;
+}
