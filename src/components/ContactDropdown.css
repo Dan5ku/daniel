@@ -1,0 +1,282 @@
+.contact-wrapper {
+  position: relative;
+}
+
+.contact-dropdown {
+  position: fixed;
+  width: 300px;
+  background: rgba(24, 76, 83, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(242, 140, 30, 0.75);
+  border-radius: 10px 0 10px 10px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(242, 140, 30, 0.08);
+  animation: dropdown-in 0.2s ease-out forwards;
+  z-index: 200;
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,  100% { transform: translateX(0); }
+  15%        { transform: translateX(-7px); }
+  30%        { transform: translateX(7px); }
+  45%        { transform: translateX(-5px); }
+  60%        { transform: translateX(5px); }
+  75%        { transform: translateX(-3px); }
+  90%        { transform: translateX(3px); }
+}
+
+.contact-dropdown.shake {
+  animation: shake 0.45s ease;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.contact-dropdown-header {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-dropdown-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--fg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color var(--transition-base), background var(--transition-base);
+}
+
+.contact-close-btn:hover {
+  color: var(--accent);
+}
+
+.contact-close-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* ── Form ───────────────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.contact-field label {
+  font-size: 0.68rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+.contact-field input,
+.contact-field textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(102, 200, 227, 0.18);
+  border-radius: 6px;
+  padding: 0.48rem 0.72rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--fg1);
+  outline: none;
+  resize: none;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--fg3);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: rgba(242, 140, 30, 0.5);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Submit ─────────────────────────────────────────────── */
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.52rem 1rem;
+  margin-top: 0.2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(242, 140, 30, 0.5);
+  background: rgba(242, 140, 30, 0.12);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: all var(--transition-base);
+}
+
+.contact-submit:hover {
+  background: rgba(242, 140, 30, 0.22);
+  border-color: rgba(242, 140, 30, 0.75);
+  color: var(--accent-hover);
+}
+
+.contact-submit svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* ── Success overlay ────────────────────────────────────── */
+.contact-success-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(18, 56, 62, 0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlay-in 0.3s ease forwards;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.contact-success-icon {
+  width: 72px;
+  height: 72px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-success-icon circle {
+  stroke: rgba(242, 140, 30, 0.6);
+  stroke-width: 2;
+  stroke-dasharray: 152;
+  stroke-dashoffset: 152;
+  animation: circle-draw 0.5s ease 0.1s forwards;
+}
+
+.contact-success-icon path {
+  stroke: var(--accent-hover);
+  stroke-width: 3.5;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  filter: drop-shadow(0 0 6px rgba(242, 140, 30, 0.8));
+  animation: check-draw 0.4s ease 0.45s forwards;
+}
+
+@keyframes circle-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes check-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Error ──────────────────────────────────────────────── */
+.contact-field input.input-error,
+.contact-field textarea.input-error {
+  border-color: rgba(220, 80, 80, 0.6);
+}
+
+.field-error {
+  font-size: 0.65rem;
+  color: #e07070;
+  letter-spacing: 0.02em;
+}
+
+.contact-error {
+  font-size: 0.72rem;
+  color: #e07070;
+  margin: 0;
+  text-align: center;
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Toast ──────────────────────────────────────────────── */
+.contact-toast {
+  font-size: 0.67rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.04em;
+  color: #e07070;
+  white-space: nowrap;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+  animation: toast-in 0.18s ease-out forwards;
+}
+
+.contact-toast span {
+  font-weight: var(--weight-bold);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.contact-toast.fading {
+  animation: toast-out 0.5s ease forwards;
+}
+
+@keyframes toast-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── Close button highlight ─────────────────────────────── */
+.contact-close-btn.highlight {
+  color: var(--accent);
+}

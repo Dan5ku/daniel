@@ -189,6 +189,8 @@
   gap: 6px;
   padding: 0.42rem 1rem;
   border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
   border: 1px solid rgba(242, 140, 30, 0.50);
   background: rgba(242, 140, 30, 0.10);
   color: var(--accent);
@@ -210,6 +212,15 @@
   box-shadow: 0 6px 18px -8px rgba(242, 140, 30, 0.4);
 }
 
+.btn-cta .btn-label {
+  animation: label-in 0.18s ease;
+}
+
+@keyframes label-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .btn-cta svg {
   width: 10px;
   height: 10px;
@@ -217,11 +228,68 @@
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
-  transition: transform var(--transition-base);
 }
 
 .btn-cta:hover svg {
-  transform: translateX(2px);
+  opacity: 1;
+}
+
+@keyframes btn-shake {
+  0%,  100% { transform: translateX(0); }
+  15%        { transform: translateX(-7px); }
+  30%        { transform: translateX(7px); }
+  45%        { transform: translateX(-5px); }
+  60%        { transform: translateX(5px); }
+  75%        { transform: translateX(-3px); }
+  90%        { transform: translateX(3px); }
+}
+
+.btn-cta.shake {
+  animation: btn-shake 0.45s ease;
+}
+
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  cursor: default;
+}
+
+.header.contact-open {
+  z-index: 200;
+}
+
+.btn-cta.highlighted {
+  background: rgba(242, 140, 30, 0.28);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-cta.active.highlighted {
+  background: rgba(242, 140, 30, 0.75);
+  border-color: rgba(242, 140, 30, 1);
+  color: #fff;
+  border-bottom-color: transparent;
+  transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+.btn-cta.active {
+  background: rgba(242, 140, 30, 0.55);
+  border-color: rgba(242, 140, 30, 0.90);
+  color: #fff;
+  border-bottom-color: transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-cta.active:hover {
+  background: rgba(242, 140, 30, 0.75);
+  border-color: rgba(242, 140, 30, 1);
+  color: #fff;
+  transform: none;
+  box-shadow: 0 4px 14px -4px rgba(242, 140, 30, 0.5);
+  border-bottom-color: transparent;
 }
 
 @media (max-width: 768px) {
